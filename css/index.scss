@@ -1,0 +1,125 @@
+/*飞机大作战css部分*/
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.container{
+    position: relative;
+    width: 512px;
+    height: 768px;
+    margin: 1vh auto;
+        .cover,.game,.gameOver{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom:0;
+        }
+        .cover{
+            z-index: 5;
+            background: url('../images/diya.jpg') no-repeat center / cover;
+                h1{
+                    line-height: 2em;
+                    margin-top: 15%;
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: #fff;
+                    text-align: center;
+                }
+                .level{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    width: 32%;
+                    height: 36%;
+                        li{
+                            line-height: 2.2em;
+                            font-weight: bold;
+                            background-color: #fff;
+                            color: #000;
+                            border-radius: 5px;
+                            text-align: center;
+                            cursor: pointer;
+                            user-select: none;
+                                &:hover{
+                                    background-color: rgb(216, 135, 185);
+                                    color: #fff;
+                                }
+                                &:nth-last-child(1){
+                                    color: red !important;
+                                }
+                        }
+                        
+                }
+        }
+        .game{
+            z-index: 2;
+            overflow: hidden;
+                .score{
+                    color: #fff;
+                }
+        }
+        .gameOver{
+            z-index: 1;
+            opacity: .8;
+                .lastscore,.honorary,.restart{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    width: 71%;
+                    height: 36%;
+                }
+                .lastscore{
+                    color:#fff;
+                    font-size: 25px;
+                    font-weight: blod;
+                        span{
+                            color:#fff;
+                            font-size: 25px;
+                            font-weight: blod;
+                        }
+                }
+                .honorary{
+                    top:155px;
+                    color:#fff;
+                    font-size: 40px;
+                    font-weight: blod;
+                }
+                .restart{
+                    top:170px;
+                    width:30%;
+                    height: 9%;
+                    line-height:69px;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-size: 30px;
+                    user-select: none;
+                    cursor: pointer;
+                    background-color: greenyellow;
+                    color: #fff;
+                        &:hover{
+                            background-color: orange;
+                        }
+                }
+        }
+}
+//爆炸效果样式
+.blast{
+    animation: boom 1s linear;
+}
+
+@keyframes boom{
+    100%{
+        opacity: 0;
+    }
+}
